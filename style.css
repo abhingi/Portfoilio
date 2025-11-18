@@ -108,8 +108,8 @@ main {
 }
 
 .home-image {
-    width: 15%;
-    min-height: 24px;
+    width: 150%;
+    min-height: 240px;
     background: var(--secondary-color); /* Placeholder Style */
     display:contents;
     justify-content: center;
@@ -363,4 +363,5 @@ main {
     .projects-container {
         grid-template-columns: 1fr; /* Stack projects vertically */
     }
+
 }
