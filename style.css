@@ -108,7 +108,7 @@ main {
 }
 
 .home-image {
-    width: 150%;
+    width: 200%;
     min-height: 240px;
     background: var(--secondary-color); /* Placeholder Style */
     display:contents;
@@ -365,3 +365,4 @@ main {
     }
 
 }
+
