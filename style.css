@@ -118,7 +118,26 @@ main {
     color: var(--white-color);
     border-radius: 10px;
 }
+@media (max-width: 768px) {
+    /* ... (other styles remain the same) */
 
+    .home {
+        flex-direction: column-reverse; /* Put image/placeholder above text */
+        text-align: center;
+    }
+    
+    /* ... (home-content h1/h3 styles remain the same) */
+
+    .home-image {
+        /* Adjusted styles for mobile view */
+        width: 180px; /* Decreased size for mobile */
+        height: 180px; /* Decreased size for mobile */
+        margin-bottom: 2rem;
+        /* Inherits border-radius and border from desktop styles */
+    }
+
+    /* ... (The rest of the media query remains the same) */
+}
 /* Buttons */
 .btn-box a {
     display: inline-block;
@@ -365,4 +384,5 @@ main {
     }
 
 }
+
 
