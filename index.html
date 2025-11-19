@@ -15,6 +15,7 @@
             <a href="#home">Home</a>
             <a href="#skills">Skills</a>
             <a href="#projects">Projects</a>
+            <a href="#courses">courses</a>
             <a href="#resume">Resume</a>
             <a href="#contact">Contact</a>
         </nav>
@@ -84,7 +85,37 @@
                     <a href="https://github.com/abhingi/Smart-Travel-Planner-frontend.git">View Repository</a>
                 
                 </div>
+        
         </section>
+
+         <hr>
+        
+                <section class="section courses" id="courses">
+            <h2>Courses & Certifications 🎓</h2>
+            <div class="courses-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Course Name</th>
+                            <th>Platform</th>
+                            <th>Certificate Link</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Full Stack Web Development</td>
+                            <td>Coursera</td>
+                            <td><a href="#" target="_blank">View Certificate</a></td>
+                        </tr>
+                        <tr>
+                            <td>Advanced JavaScript Concepts</td>
+                            <td>Udemy</td>
+                            <td><a href="#" target="_blank">View Certificate</a></td>
+                        </tr>
+                                            </tbody>
+                </table>
+            </div>
+        </section>
 
         <hr>
 
@@ -105,19 +136,20 @@
         <hr>
 
         <section class="section contact" id="contact">
-            <h2>Get In Touch</h2>
-            <form class="contact-form">
-                <div class="form-group">
-                    <input type="text" placeholder="Your Name" required>
-                </div>
-                <div class="form-group">
-                    <input type="email" placeholder="Your Email" required>
-                </div>
-                <div class="form-group">
-                    <textarea placeholder="Your Message" rows="6" required></textarea>
-                </div>
-                <button type="submit" class="btn primary-btn">Send Message</button>
-            </form>
+    <h2>Get In Touch</h2>
+    <form class="contact-form" action="https://formsubmit.co/nabhi2265@gmail.com" method="POST">
+        <div class="form-group">
+            <input type="text" name="name" placeholder="Your Name" required>
+        </div>
+        <div class="form-group">
+            <input type="email" name="email" placeholder="Your Email" required>
+        </div>
+        <div class="form-group">
+            <textarea name="message" placeholder="Your Message" rows="6" required></textarea>
+        </div>
+        <input type="hidden" name="_next" value="https://yourwebsite.com/thankyou.html"> 
+        <button type="submit" class="btn primary-btn">Send Message</button>
+    </form>
             <div class="social-links">
                 <a href="#"><i class="fab fa-linkedin"></i></a>
                 <a href="#"><i class="fab fa-github"></i></a>
@@ -134,4 +166,3 @@
 </body>
 
 </html>
-
