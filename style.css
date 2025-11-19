@@ -108,8 +108,8 @@ main {
 }
 
 .home-image {
-    width: 200%;
-    min-height: 240px;
+    width: 15%;
+    min-height: 24px;
     background: var(--secondary-color); /* Placeholder Style */
     display:contents;
     justify-content: center;
@@ -118,6 +118,9 @@ main {
     color: var(--white-color);
     border-radius: 10px;
 }
+/* --- Responsive Design (Media Queries) --- */
+
+/* For smaller tablets and mobile devices */
 @media (max-width: 768px) {
     /* ... (other styles remain the same) */
 
@@ -224,6 +227,52 @@ main {
     display: inline-block;
 }
 
+/* Style for the Courses Section */
+.courses-container {
+    max-width: 1000px;
+    margin: 30px auto;
+    padding: 0 20px;
+    overflow-x: auto; /* Ensures table is scrollable on small screens */
+}
+
+.courses-container table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    background-color: var(--secondary-color); /* Assuming you have a CSS variable for background/secondary color */
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.courses-container th, 
+.courses-container td {
+    padding: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Light border */
+    color: var(--text-color); /* Assuming a text color variable */
+}
+
+.courses-container th {
+    background-color: var(--primary-color); /* Assuming a primary color variable */
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.9em;
+}
+
+.courses-container tbody tr:hover {
+    background-color: rgba(255, 255, 255, 0.05); /* Subtle hover effect */
+}
+
+.courses-container td a {
+    color: var(--accent-color); /* Assuming an accent color variable for links */
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.courses-container td a:hover {
+    text-decoration: underline;
+}
 /* Resume Section */
 .resume p {
     text-align: center;
@@ -382,7 +431,4 @@ main {
     .projects-container {
         grid-template-columns: 1fr; /* Stack projects vertically */
     }
-
 }
-
-
