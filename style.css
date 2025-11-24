@@ -121,26 +121,26 @@ main {
 /* --- Responsive Design (Media Queries) --- */
 
 /* For smaller tablets and mobile devices */
+/* In style.css, within the @media (max-width: 768px) block */
 @media (max-width: 768px) {
     /* ... (other styles remain the same) */
 
     .home {
-        flex-direction: column-reverse; /* Put image/placeholder above text */
+        flex-direction: column-reverse; 
         text-align: center;
     }
     
-    /* ... (home-content h1/h3 styles remain the same) */
-
     .home-image {
         /* Adjusted styles for mobile view */
-        width: 180px; /* Decreased size for mobile */
-        height: 180px; /* Decreased size for mobile */
+        width: 250px; /* Reduced size for mobile */
+        height: 250px; /* Forces square container */
         margin-bottom: 2rem;
-        /* Inherits border-radius and border from desktop styles */
     }
 
     /* ... (The rest of the media query remains the same) */
 }
+
+
 /* Buttons */
 .btn-box a {
     display: inline-block;
@@ -432,3 +432,4 @@ main {
         grid-template-columns: 1fr; /* Stack projects vertically */
     }
 }
+
