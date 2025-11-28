@@ -15,6 +15,7 @@
     --text-color: #343a40; /* Dark Gray */
     --white-color: #ffffff;
     --card-bg: #e9ecef;
+    --accent-color: #28a745; /* Green for links/accents */
 }
 
 body {
@@ -23,7 +24,7 @@ body {
     color: var(--text-color);
 }
 
-/* Header and Navigation */
+/* -------------------- Header and Navigation -------------------- */
 .header {
     position: fixed;
     top: 0;
@@ -40,7 +41,7 @@ body {
 
 .logo {
     font-size: 1.75rem;
-    color: #007bff ;
+    color: var(--primary-color);
     font-weight: 700;
 }
 
@@ -64,13 +65,13 @@ body {
     display: none; /* Hidden on desktop */
 }
 
-/* Main Content and Sections */
+/* -------------------- Main Content and Sections -------------------- */
 main {
     padding-top: 5rem; /* Space for fixed header */
 }
 
 .section {
-    min-height: 100vh; /* Make sections full height */
+    min-height: 100vh;
     padding: 6rem 5% 2rem;
 }
 
@@ -81,12 +82,22 @@ main {
     color: var(--primary-color);
 }
 
-/* Home Section Specifics */
+hr {
+    border: none;
+    border-top: 1px solid var(--card-bg);
+    margin: 2rem 5%;
+}
+
+/* -------------------- Home Section -------------------- */
 .home {
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 2rem;
+}
+
+.home-content {
+    flex: 1;
 }
 
 .home-content h1 {
@@ -108,38 +119,18 @@ main {
 }
 
 .home-image {
-    width: 15%;
-    min-height: 24px;
-    background: var(--secondary-color); /* Placeholder Style */
-    display:contents;
-    justify-content: center;
-    align-items: center;
-    font-weight: bold;
-    color: var(--white-color);
-    border-radius: 10px;
-}
-/* --- Responsive Design (Media Queries) --- */
-
-/* For smaller tablets and mobile devices */
-/* In style.css, within the @media (max-width: 768px) block */
-@media (max-width: 768px) {
-    /* ... (other styles remain the same) */
-
-    .home {
-        flex-direction: column-reverse; 
-        text-align: center;
-    }
-    
-    .home-image {
-        /* Adjusted styles for mobile view */
-        width: 250px; /* Reduced size for mobile */
-        height: 250px; /* Forces square container */
-        margin-bottom: 2rem;
-    }
-
-    /* ... (The rest of the media query remains the same) */
+    width: 35%;
+    text-align: center;
 }
 
+.home-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 50%; /* Assuming the image is circular */
+    object-fit: cover;
+    border: 5px solid var(--primary-color);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
 
 /* Buttons */
 .btn-box a {
@@ -173,7 +164,7 @@ main {
     color: var(--white-color);
 }
 
-/* Skills Section */
+/* -------------------- Skills Section -------------------- */
 .skills-container {
     display: flex;
     flex-wrap: wrap;
@@ -193,6 +184,7 @@ main {
 
 .skill-item:hover {
     transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
 .skill-item i {
@@ -201,11 +193,13 @@ main {
     margin-bottom: 0.5rem;
 }
 
-/* Projects Section */
+/* -------------------- Projects Section -------------------- */
 .projects-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .project-card {
@@ -213,6 +207,11 @@ main {
     padding: 1.5rem;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    transition: box-shadow 0.3s;
+}
+
+.project-card:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
 }
 
 .project-card h3 {
@@ -221,39 +220,39 @@ main {
 }
 
 .project-card a {
-    color: var(--primary-color);
+    color: var(--accent-color);
     font-weight: 600;
     margin-top: 1rem;
     display: inline-block;
 }
 
-/* Style for the Courses Section */
+/* -------------------- Courses Section -------------------- */
 .courses-container {
     max-width: 1000px;
     margin: 30px auto;
     padding: 0 20px;
-    overflow-x: auto; /* Ensures table is scrollable on small screens */
+    overflow-x: auto;
 }
 
 .courses-container table {
     width: 100%;
     border-collapse: collapse;
     text-align: left;
-    background-color: var(--secondary-color); /* Assuming you have a CSS variable for background/secondary color */
+    background-color: var(--white-color);
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.courses-container th, 
+.courses-container th,
 .courses-container td {
     padding: 15px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Light border */
-    color: var(--text-color); /* Assuming a text color variable */
+    border-bottom: 1px solid var(--card-bg);
+    color: var(--text-color);
 }
 
 .courses-container th {
-    background-color: var(--primary-color); /* Assuming a primary color variable */
+    background-color: var(--primary-color);
     color: white;
     font-weight: bold;
     text-transform: uppercase;
@@ -261,11 +260,11 @@ main {
 }
 
 .courses-container tbody tr:hover {
-    background-color: rgba(255, 255, 255, 0.05); /* Subtle hover effect */
+    background-color: var(--card-bg);
 }
 
 .courses-container td a {
-    color: var(--accent-color); /* Assuming an accent color variable for links */
+    color: var(--accent-color);
     text-decoration: none;
     font-weight: 500;
 }
@@ -273,7 +272,8 @@ main {
 .courses-container td a:hover {
     text-decoration: underline;
 }
-/* Resume Section */
+
+/* -------------------- Resume Section -------------------- */
 .resume p {
     text-align: center;
     margin-bottom: 1.5rem;
@@ -286,9 +286,16 @@ main {
 }
 
 .resume-snippet {
+    max-width: 800px;
+    margin: 0 auto;
     background: var(--card-bg);
     padding: 2rem;
     border-radius: 8px;
+}
+
+.resume-snippet h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
 }
 
 .resume-snippet ul {
@@ -299,8 +306,7 @@ main {
     margin-bottom: 0.5rem;
 }
 
-
-/* Contact Section */
+/* -------------------- Contact Section -------------------- */
 .contact-form {
     max-width: 600px;
     margin: 0 auto;
@@ -317,6 +323,8 @@ main {
     border: 1px solid var(--secondary-color);
     border-radius: 5px;
     font-size: 1rem;
+    background-color: var(--white-color);
+    color: var(--text-color);
 }
 
 .contact-form button {
@@ -340,8 +348,7 @@ main {
     color: var(--primary-color);
 }
 
-
-/* Footer */
+/* -------------------- Footer -------------------- */
 .footer {
     padding: 1.5rem 5%;
     text-align: center;
@@ -350,21 +357,21 @@ main {
     font-size: 0.85rem;
 }
 
-/* --- Responsive Design (Media Queries) --- */
+/* -------------------- Responsive Design (Media Queries) -------------------- */
 
 /* For smaller tablets and mobile devices */
 @media (max-width: 768px) {
     /* General adjustments */
     .section {
         padding: 4rem 5% 1rem;
-        min-height: auto; /* Allow sections to collapse naturally */
+        min-height: auto;
     }
-    
+
     .home {
-        flex-direction: column-reverse; /* Put image/placeholder above text */
+        flex-direction: column-reverse; /* Put image above text */
         text-align: center;
     }
-    
+
     .home-content h1 {
         font-size: 2.5rem;
     }
@@ -372,15 +379,19 @@ main {
     .home-content h3 {
         font-size: 1.5rem;
     }
-    
+
     .home-image {
-        width: 80%;
+        width: 60%;
         margin-bottom: 2rem;
     }
 
     .btn-box {
         display: flex;
         justify-content: center;
+    }
+
+    .projects-container {
+        grid-template-columns: 1fr; /* Stack projects vertically */
     }
 
     /* Header/Navbar for Mobile */
@@ -390,13 +401,13 @@ main {
 
     .navbar {
         position: absolute;
-        top: 100%; /* Below the header */
+        top: 100%;
         left: 0;
         width: 100%;
         background: var(--white-color);
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         flex-direction: column;
-        display: none; /* Hidden by default */
+        display: none; /* Hidden by default - JS will toggle this */
         padding: 1rem 0;
         transition: 0.3s ease-in-out;
     }
@@ -418,18 +429,17 @@ main {
     .header {
         padding: 1rem 3%;
     }
-    
+
     .logo {
         font-size: 1.5rem;
     }
-    
+
     .btn-box a {
         padding: 0.6rem 1rem;
         font-size: 0.9rem;
     }
-    
-    .projects-container {
-        grid-template-columns: 1fr; /* Stack projects vertically */
+
+    .home-image {
+        width: 80%;
     }
 }
-
